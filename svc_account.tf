@@ -23,8 +23,8 @@ resource "google_project_iam_binding" "project_role_binding" {
 
 # Assign the custom role to the project
 resource "google_project_iam_binding" "gke_service_account_iam_role" {
-  project = "mohamed-abdelrazik-project"
-  role    = "projects/${google_service_account.my_service_account.project}/roles/${google_project_iam_custom_role.custom-role.role_id}"
+  project = "fatma120d"
+  role    = "projects/${google_service_account.my_service_account.project}/roles/${google_project_iam_custom_role.custom_role.role_id}"
   members = [
     "serviceAccount:${google_service_account.my_service_account.email}"
   ]
