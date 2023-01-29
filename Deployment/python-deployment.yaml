@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-deployment
+  labels:
+    app: front
+    type: front-end
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: front-end
+
+  template:
+    metadata:
+      labels:
+        app: front
+        type: front-end
+
+    spec:
+      containers:
+        - name: app-container
+          image: gcr.io/fatma120d/python-app-img
+          env:
+            - name: REDIS_HOST
+              value: redis-service.default.svc.cluster.local
+          port:
+            - port : 8080   
