@@ -28,5 +28,5 @@ sudo apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
         Connect GKE cluster 
 gcloud compute ssh --zone "us-central-1" "my-private-vm"  --tunnel-through-iap --project "fatma120d"
 gcloud compute scp --recurse deployment/ my-private-vm:/home/fatmaelzahraa31 --zone us-central-1 --tunnel-through-iap
-Kubectl create -f deployment
+Kubectl create -f Deployment
  
